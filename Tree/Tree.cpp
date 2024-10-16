@@ -25,7 +25,12 @@ tree::Tree::Node::~Node()
 	this->right = nullptr;
 }
 
-tree::Tree::Tree() : root{nullptr}, left{nullptr}, right {nullptr}
+tree::Tree::Node* tree::Tree::Insert(Node* current, Node* inserted, Node* parent)
+{
+	return nullptr;
+}
+
+tree::Tree::Tree() : root{nullptr}, left{nullptr}, right {nullptr}, size{0}
 {
 }
 
