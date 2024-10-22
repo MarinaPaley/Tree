@@ -25,6 +25,12 @@ tree::Tree::Node::~Node()
 	this->right = nullptr;
 }
 
+std::wstring tree::Tree::ToString(const Node& node)
+{
+	auto temp = node.ToString();
+	return std::wstring{ temp.cbegin(), temp.cend() };
+}
+
 tree::Tree::Node* tree::Tree::Insert(Node* current, Node* inserted, Node* parent)
 {
 	return nullptr;
