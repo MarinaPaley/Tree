@@ -186,6 +186,13 @@ namespace tree
 		 * @param other Другое дерево.
 		*/
 		void Swap(const Tree& other) noexcept;
+
+		/**
+		 * @brief Удаление элементов рекурсивно.
+		 * @param current Текущий узел.
+		*/
+		void InOrderRemoveTree(Node* current);
+
 	public:
 		/**
 		 * @brief Инициализирует объект класса \c tree::Tree.
