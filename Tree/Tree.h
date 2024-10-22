@@ -180,6 +180,12 @@ namespace tree
 		* @return Глубина дерева.
 		*/
 		int GetHeight(Node* current) const noexcept;
+
+		/**
+		 * @brief Обмен содержимым с другим деревом.
+		 * @param other Другое дерево.
+		*/
+		void Swap(const Tree& other) noexcept;
 	public:
 		/**
 		 * @brief Инициализирует объект класса \c tree::Tree.
