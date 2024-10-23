@@ -1,6 +1,7 @@
 #pragma once
 #include <initializer_list>
 #include <vector>
+#include <iostream>
 
 namespace tree
 {
@@ -292,5 +293,7 @@ namespace tree
 		* @brief Строковое представление делева.
 		*/
 		std::string ToString() const noexcept;
+
+		friend std::ostream& operator<<(std::ostream & out, const Tree & tree);
 	};
 }
