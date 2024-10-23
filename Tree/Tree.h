@@ -4,6 +4,21 @@
 
 namespace tree
 {
+	class Tree;
+
+	/**
+	* @brief Метод представления дерева в виде строки "широких" символов.
+	* @param tree Дерево.
+	* @return Дерево в виде строки "широких" символов.
+	*/
+	std::wstring ToString(const Tree& tree);
+
+	/**
+	* @brief Оператор равенства двух деревьев.
+	* @return \c true, если равны. Иначе \c - false.
+	*/
+	bool operator==(const Tree& lha, const Tree& rha);
+
 	/**
 	* @brief Класс дерево.
 	*/
@@ -13,7 +28,7 @@ namespace tree
 		struct Node;
 
 		/**
-		 * @brief Метод представления в виде строки "широких" символов.
+		 * @brief Метод представления узла в виде строки "широких" символов.
 		 * @param node Узел.
 		 * @return Узел в виде строки "широких" символов.
 		*/
@@ -28,47 +43,57 @@ namespace tree
 			* @brief Данные.
 			*/
 			int data;
+
 			/**
 			* @brief Указатель на родителя.
 			*/
 			Node* parent;
+
 			/**
 			* @brief Указатель на левого потомка.
 			*/
 			Node* left;
+
 			/**
 			* @brief Указатель на правого потомка.
 			*/
 			Node* right;
+
 			/**
 			* @brief Инициализирует новый экземпляр класса \c Tree::Node.
 			* @param data Значение узла.
 			*/
 			Node(const int data);
+
 			/**
 			* @brief Контруктор копирования.
 			*/
 			Node(const Node&) = delete;
+
 			/**
 			* @brief Перемещающий конструктор.
 			* @param other Другой узел.
 			*/
 			Node(Node&& other) = default;
+
 			/**
 			* @brief Оператор копирования.
 			* @return Скопированный объект.
 			*/
 			Node& operator=(const Node&) = delete;
+
 			/**
 			* @brief Оператор перемещения.
 			* @param other Другой узел.
 			* @return Перемещенный объект.
 			*/
 			Node& operator=(Node&& other) = default;
+
 			/**
 			* @brief Деструктор.
 			*/
 			~Node();
+
 			/**
 			* @brief Оператор сравнения с другим узлом.
 			* @param lha Левый операнд.
@@ -79,6 +104,7 @@ namespace tree
 			{
 				return lha.data == rha.data;
 			}
+
 			/**
 			* @brief Оператор сравнения с другим узлом.
 			* @param lha Левый операнд.
@@ -265,6 +291,6 @@ namespace tree
 		/**
 		* @brief Строковое представление делева.
 		*/
-		std::string ToString();
+		std::string ToString() const noexcept;
 	};
 }

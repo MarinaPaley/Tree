@@ -179,6 +179,7 @@ void tree::Tree::Add(const int data)
 	}
 
 	++this->size;
+	this->MakeValues();
 }
 
 bool tree::Tree::Remove(const int value)
@@ -191,10 +192,8 @@ bool tree::Tree::HasValue(const int value) const noexcept
 	return nullptr != this->Find(this->root, value);
 }
 
-std::string tree::Tree::ToString()
+std::string tree::Tree::ToString() const noexcept
 {
-	this->MakeValues();
-
 	std::ostringstream buffer{};
 	buffer << "{ ";
 	for (auto it = this->values.cbegin(); it != this->values.cend(); ++it)
@@ -206,3 +205,14 @@ std::string tree::Tree::ToString()
 	return buffer.str();
 }
 
+std::wstring tree::ToString(const Tree& tree)
+{
+	std::wstringstream buffer{};
+	auto temp = tree.ToString();
+	return std::wstring{ temp.cbegin(), temp.cend() };
+}
+
+bool tree::operator==(const Tree& lha, const Tree& rha)
+{
+	return lha.ToString() == rha.ToString();
+}

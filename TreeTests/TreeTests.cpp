@@ -42,5 +42,14 @@ namespace TreeTests
 			// assert
 			Assert::IsFalse(actual);
 		}
+
+		TEST_METHOD(AreEquals_SameTrees_IsTrue)
+		{
+			// arrange
+			Tree tree1{ 1, 2, 3, 4, 5, 6, 7 };
+			Tree tree2{ 1, 2, 3, 4, 5, 6, 7 };
+			// act & assert
+			Assert::AreEqual(tree1, tree2);
+		}
 	};
 }
