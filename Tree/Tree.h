@@ -73,7 +73,7 @@ namespace tree
 			* @brief ќператор сравнени€ с другим узлом.
 			* @param lha Ћевый операнд.
 			* @param rha ѕравый операнд.
-			* @return @c true в случае тождества, @c false в противном случае.
+			* @return \c true в случае тождества, \c false в противном случае.
 			*/
 			friend bool operator==(const Node& lha, const Node& rha)
 			{
@@ -83,7 +83,7 @@ namespace tree
 			* @brief ќператор сравнени€ с другим узлом.
 			* @param lha Ћевый операнд.
 			* @param rha ѕравый операнд.
-			* @return @c 1 Ц значение узла больше, @c -1 Ц значение узла меньше, иначе Ц @c 0.
+			* @return \c 1 Ц значение узла больше, \c -1 Ц значение узла меньше, иначе Ц \c 0.
 			*/
 			friend int operator<=>(const Node& lha, const Node& rha)
 			{
@@ -100,13 +100,13 @@ namespace tree
 
 			/**
 			 * @brief явл€етс€ ли текущий узел дерева его корнем.
-			 * @return @c true - €вл€етс€, @c false - нет.
+			 * @return \c true - €вл€етс€, \c false - нет.
 			*/
 			bool IsRoot() const noexcept;
 
 			/**
 			 * @brief явл€етс€ ли текущий узел дерева его листом.
-			 * @return @c true - €вл€етс€, @c false - нет.
+			 * @return \c true - €вл€етс€, \c false - нет.
 			*/
 			bool IsLeaf() const noexcept;
 
@@ -156,8 +156,8 @@ namespace tree
 		Node* Find(Node* current, const int target) const noexcept;
 
 		/**
-		 * @brief ѕроцедура, в которой замен€етс€
-		 одно поддерево в качестве дочернего элемента своего родител€ другим поддеревом.
+		 * @brief ѕроцедура, в которой замен€етс€ одно поддерево 
+		 в качестве дочернего элемента своего родител€ другим поддеревом.
 		 * @param parent –одительский узел.
 		 * @param son ƒочерний узел.
 		*/
