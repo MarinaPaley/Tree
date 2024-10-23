@@ -1,5 +1,7 @@
 #pragma once
 #include <initializer_list>
+#include <vector>
+
 namespace tree
 {
 	/**
@@ -13,7 +15,7 @@ namespace tree
 		/**
 		 * @brief Метод представления в виде строки "широких" символов.
 		 * @param node Узел.
-		 * @return Узел в  виде строки "широких" символов.
+		 * @return Узел в виде строки "широких" символов.
 		*/
 		std::wstring ToString(const Node& node);
 
@@ -107,6 +109,7 @@ namespace tree
 			 * @return @c true - является, @c false - нет.
 			*/
 			bool IsLeaf() const noexcept;
+
 			/**
 			* @brief Представление узда в строковом виде.
 			*/
@@ -193,6 +196,10 @@ namespace tree
 		*/
 		void InOrderRemoveTree(Node* current);
 
+		std::vector<int> values;
+		void MakeValues();
+		void InOrder(Node* current);
+
 	public:
 		/**
 		 * @brief Инициализирует объект класса \c tree::Tree.
@@ -212,7 +219,7 @@ namespace tree
 
 		/**
 		 * @brief Определяет количесто узлов в дереве.
-		 * @return Количесто узлов в дереве.
+		 * @return Количество узлов в дереве.
 		*/
 		size_t GetSize() const noexcept;
 
@@ -234,7 +241,7 @@ namespace tree
 		* @param value Значение удаляемого узла.
 		* @return \c true, если узел удален, иначе \c false.
 		*/
-		virtual bool Remove(const int value);
+		bool Remove(const int value);
 
 		/**
 		 * @brief Проверет содержится ли в дереве узел с таки значением.
@@ -242,5 +249,10 @@ namespace tree
 		 * @return \c true, если содержится, иначе \c false.
 		*/
 		bool HasValue(const int value) const noexcept;
+
+		/**
+		* 
+		*/
+		std::string ToString();
 	};
 }
