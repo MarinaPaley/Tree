@@ -10,4 +10,5 @@ int main()
     std::cout << result << "\n";
     auto tree1 = Tree();
     tree1.Add(1);
+    std::cout << tree.ToString() << std::endl;
 }

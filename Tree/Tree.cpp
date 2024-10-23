@@ -124,10 +124,20 @@ void tree::Tree::InOrderRemoveTree(Node* current)
 
 void tree::Tree::MakeValues()
 {
+	this->values.clear();
+	this->InOrder(this->root);
 }
 
 void tree::Tree::InOrder(Node* current)
 {
+	if (nullptr == current)
+	{
+		return;
+	}
+
+	this->InOrder(current->left);
+	this->values.push_back(current->data);
+	this->InOrder(current->right);
 }
 
 tree::Tree::Tree() : root{nullptr}, left{nullptr}, right {nullptr}, size{0}
@@ -181,8 +191,18 @@ bool tree::Tree::HasValue(const int value) const noexcept
 	return nullptr != this->Find(this->root, value);
 }
 
-std::string tree::Tree::ToString() const noexcept
+std::string tree::Tree::ToString()
 {
-	return std::string();
+	this->MakeValues();
+
+	std::ostringstream buffer{};
+	buffer << "{ ";
+	for (auto it = this->values.cbegin(); it != this->values.cend(); ++it)
+	{
+		buffer << (*it) << " ";
+	}
+	buffer << "}";
+
+	return buffer.str();
 }
 

@@ -87,11 +87,11 @@ namespace tree
 			*/
 			friend int operator<=>(const Node& lha, const Node& rha)
 			{
-				if (lha.data > rha.data)
+				if (lha.data < rha.data)
 				{
 					return -1;
 				}
-				if (lha.data < rha.data)
+				if (lha.data > rha.data)
 				{
 					return 1;
 				}
@@ -265,6 +265,6 @@ namespace tree
 		/**
 		* @brief Строковое представление делева.
 		*/
-		std::string ToString()const noexcept;
+		std::string ToString();
 	};
 }
