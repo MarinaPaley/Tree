@@ -196,8 +196,20 @@ namespace tree
 		*/
 		void InOrderRemoveTree(Node* current);
 
+		/**
+		* @brief Вектор узлов в порядке обхода дерева InOrder.
+		*/
 		std::vector<int> values;
+
+		/**
+		* @brief Создание вектора в порядке обхода дерева InOrder.
+		*/
 		void MakeValues();
+
+		/**
+		* @brief Обхода дерева.
+		* @param current Текущий узел дерева.
+		*/
 		void InOrder(Node* current);
 
 	public:
@@ -251,8 +263,8 @@ namespace tree
 		bool HasValue(const int value) const noexcept;
 
 		/**
-		* 
+		* @brief Строковое представление делева.
 		*/
-		std::string ToString();
+		std::string ToString()const noexcept;
 	};
 }

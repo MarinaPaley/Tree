@@ -122,6 +122,14 @@ void tree::Tree::InOrderRemoveTree(Node* current)
 {
 }
 
+void tree::Tree::MakeValues()
+{
+}
+
+void tree::Tree::InOrder(Node* current)
+{
+}
+
 tree::Tree::Tree() : root{nullptr}, left{nullptr}, right {nullptr}, size{0}
 {
 }
@@ -173,7 +181,8 @@ bool tree::Tree::HasValue(const int value) const noexcept
 	return nullptr != this->Find(this->root, value);
 }
 
-std::string tree::Tree::ToString()
+std::string tree::Tree::ToString() const noexcept
 {
 	return std::string();
 }
+
