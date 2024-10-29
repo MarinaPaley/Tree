@@ -215,7 +215,7 @@ namespace tree
 		 * @brief Обмен содержимым с другим деревом.
 		 * @param other Другое дерево.
 		*/
-		void Swap(const Tree& other) noexcept;
+		void Swap(Tree& other) noexcept;
 
 		/**
 		 * @brief Удаление элементов рекурсивно.
@@ -273,7 +273,7 @@ namespace tree
 		 * @param value Значение нового узла.
 		 * @return \c true, если узел добавлен, иначе \c false.
 		*/
-		void Add(const int data);
+		bool Add(const int data);
 
 		/**
 		* @brief Удаляет узел из дерева.
