@@ -128,5 +128,15 @@ namespace TreeTests
 			// act & assert
 			Assert::IsTrue(tree.Remove(15));
 		}
+
+		TEST_METHOD(AddEmtyList_ValidData_True)
+		{
+			// arrange
+			Tree tree;
+			
+
+			// act & assert
+			Assert::IsTrue(tree.Add(1));
+		}
 	};
 }
